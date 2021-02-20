@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaCoordinator
 import RxSwift
 import UIKit
 

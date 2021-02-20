@@ -4,6 +4,7 @@
 // https://github.com/OptimizeFitness/Minerva/blob/master/LICENSE
 //
 
+import MinervaList
 import UIKit
 
 open class SegmentedControlCellModel: BaseListCellModel {

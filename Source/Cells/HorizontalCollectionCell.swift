@@ -6,6 +6,7 @@
 
 import Foundation
 import IGListKit
+import MinervaList
 import UIKit
 
 public final class HorizontalCollectionCellModel: BaseListCellModel {

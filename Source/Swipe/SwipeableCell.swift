@@ -6,6 +6,7 @@
 
 import Foundation
 import IGListKit
+import MinervaList
 import RxSwift
 import SwipeCellKit
 import UIKit

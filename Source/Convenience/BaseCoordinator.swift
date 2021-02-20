@@ -5,6 +5,8 @@
 //
 
 import Foundation
+import MinervaCoordinator
+import MinervaList
 import RxRelay
 import RxSwift
 import UIKit
@@ -102,7 +104,7 @@ open class BaseCoordinator<T: ListPresenter, U: ListViewController>: NSObject, C
       updateDisposable?.dispose()
       updateDisposable =
         updateRelay
-          .observeOn(MainScheduler.instance)
+          .observe(on: MainScheduler.instance)
           .subscribe(onNext: { [weak self] sections in
             self?.update(with: sections)
           })

@@ -6,6 +6,8 @@
 
 import Foundation
 import Minerva
+import MinervaCoordinator
+import MinervaList
 import RxSwift
 
 public final class FakePanModalCoordinator: PanModalCollectionCoordinator<

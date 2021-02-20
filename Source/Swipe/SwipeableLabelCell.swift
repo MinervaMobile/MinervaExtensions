@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaList
 import SwipeCellKit
 import UIKit
 

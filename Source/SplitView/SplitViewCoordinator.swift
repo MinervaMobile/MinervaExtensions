@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaCoordinator
 import RxRelay
 import RxSwift
 import UIKit
@@ -40,7 +41,7 @@ open class SplitViewCoordinator<T: SplitChildCoordinator, U: SplitChildCoordinat
   public let defaultDetailCoordinator: U
 
   public private(set) var displayedDetailCoordinator: SplitChildCoordinator?
-  
+
   private var masterNavigator: BasicNavigator {
     splitNavigator.masterNavigator
   }

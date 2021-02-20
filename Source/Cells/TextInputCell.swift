@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaList
 import RxSwift
 import UIKit
 
@@ -130,7 +131,7 @@ public final class TextInputCell: BaseReactiveListCell<TextInputCellModel> {
     textField.textContentType = model.textContentType
 
     model.bottomBorderColor
-      .observeOn(MainScheduler.instance)
+      .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] bottomBorderColor -> Void in
         self?.bottomBorder.backgroundColor = bottomBorderColor
       })

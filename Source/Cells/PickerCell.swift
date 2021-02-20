@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaList
 import UIKit
 
 open class PickerCellModel: BaseListCellModel {
@@ -252,5 +253,14 @@ public struct PickerDataComponent: Equatable {
     self.textAlignment = textAlignment
     self.verticalMargin = verticalMargin
     self.startingRow = startingRow
+  }
+}
+
+extension Collection {
+  internal func element(at index: Self.Index) -> Self.Iterator.Element? {
+    guard index >= startIndex, index < endIndex else {
+      return nil
+    }
+    return self[index]
   }
 }

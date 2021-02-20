@@ -6,6 +6,8 @@
 
 import Foundation
 import IGListKit
+import MinervaCoordinator
+import MinervaList
 import RxRelay
 import UIKit
 

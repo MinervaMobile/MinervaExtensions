@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaCoordinator
 import UIKit
 
 open class CollectionViewController: BaseViewController {

@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaList
 import RxRelay
 import RxSwift
 import UIKit
@@ -115,7 +116,7 @@ public final class TextViewCell: BaseReactiveListCell<TextViewCellModel> {
     }
 
     model.becomesFirstResponder
-      .observeOn(MainScheduler.instance)
+      .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] isFirstResponder in
         if isFirstResponder {
           self?.textView.becomeFirstResponder()

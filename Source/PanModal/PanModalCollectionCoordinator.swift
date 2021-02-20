@@ -5,6 +5,8 @@
 //
 
 import Foundation
+import MinervaCoordinator
+import MinervaList
 import PanModal
 import UIKit
 

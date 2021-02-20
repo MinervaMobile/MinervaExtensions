@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaList
 import RxSwift
 import UIKit
 
@@ -86,7 +87,7 @@ public final class ImageTextCell: BaseReactiveListCell<ImageTextCellModel> {
 
     imageView.layer.cornerRadius = model.imageViewCornerRadius
     model.imageObservable
-      .observeOn(MainScheduler.instance)
+      .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] in self?.imageView.image = $0 })
       .disposed(
         by: disposeBag

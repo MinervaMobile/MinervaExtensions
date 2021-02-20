@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaList
 import RxSwift
 import UIKit
 
@@ -176,7 +177,7 @@ public final class LabelAccessoryCell: BaseReactiveListCell<LabelAccessoryCellMo
     backgroundView?.backgroundColor = model.backgroundColor
 
     model.iconImageObservable
-      .observeOn(MainScheduler.instance)
+      .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] image in
         self?.iconImageView.image = image
       })

@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaList
 import RxSwift
 import UIKit
 
@@ -79,7 +80,7 @@ public final class ImageCell: BaseReactiveListCell<ImageCellModel> {
     imageView.contentMode = model.contentMode
 
     model.imageObservable
-      .observeOn(MainScheduler.instance)
+      .observe(on: MainScheduler.instance)
       .subscribe(
         onNext: { [weak self] image -> Void in
           guard let strongSelf = self else { return }

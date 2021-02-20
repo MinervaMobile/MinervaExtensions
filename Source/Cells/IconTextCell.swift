@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import MinervaList
 import RxSwift
 import UIKit
 
@@ -172,7 +173,7 @@ public final class IconTextCell: BaseReactiveListCell<IconTextCellModel> {
     backgroundView?.backgroundColor = model.backgroundColor
 
     model.iconImage
-      .observeOn(MainScheduler.instance)
+      .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] in self?.imageView.image = $0 })
       .disposed(
         by: disposeBag

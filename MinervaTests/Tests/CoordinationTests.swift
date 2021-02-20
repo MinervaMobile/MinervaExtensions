@@ -6,24 +6,28 @@
 
 import Foundation
 import Minerva
+import MinervaCoordinator
 import RxSwift
 import XCTest
 
 public final class CoordinationTests: XCTestCase {
   private var rootCoordinator: FakeCoordinator!
   private var navigator: BasicNavigator!
+  private var window: UIWindow!
 
   override public func setUp() {
     super.setUp()
     navigator = BasicNavigator(parent: nil)
     rootCoordinator = FakeCoordinator(navigator: navigator)
     navigator.setViewControllers([rootCoordinator.viewController], animated: false, completion: nil)
-    UIApplication.shared.windows.first?.rootViewController = navigator.navigationController
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window.rootViewController = navigator.navigationController
+    window.makeKeyAndVisible()
   }
 
   override public func tearDown() {
     rootCoordinator = nil
-    UIApplication.shared.windows.first?.rootViewController = nil
+    window = nil
     super.tearDown()
   }
 
