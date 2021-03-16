@@ -173,7 +173,7 @@ extension PickerLabelCellModelHelper: UIPickerViewDelegate {
     let width =
       pickerData.data.reduce(
         0
-      ) { max($0, $1.width(constraintedToHeight: CGFloat.greatestFiniteMagnitude)) }
+      ) { max($0, $1.size().width) }
       + (pickerData.options?.rowMargin ?? 8)
     return width
   }
@@ -202,7 +202,7 @@ extension PickerLabelCell {
     let pickerWidth =
       model.helper.pickerData.data.reduce(
         0
-      ) { max($0, $1.width(constraintedToHeight: CGFloat.greatestFiniteMagnitude)) }
+      ) { max($0, $1.size().width) }
       + (data.options?.rowMargin ?? 8)
     let labelWidth =
       data.options?.label?

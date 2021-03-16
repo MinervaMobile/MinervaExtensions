@@ -112,7 +112,7 @@ extension PanModalNavigationCollectionVC {
   public var shortFormHeight: PanModalHeight {
     let height =
       rootViewController?.collectionView.collectionViewLayout.collectionViewContentSize.height ?? 0
-    let inset = rootViewController?.view.safeAreaInsets.bottom ?? 0 + keyboardHeight
+    let inset = (rootViewController?.view.safeAreaInsets.bottom ?? 0) + keyboardHeight
     let navigationBarHeight = navigationBar.frame.height
     return .contentHeight(height + inset + navigationBarHeight)
   }
